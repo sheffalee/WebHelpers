@@ -7,12 +7,12 @@ from chatbot import chatbot_response  # Import the chatbot_response function fro
 
 def main():
     # Set a title for the app
-    st.title("Sentiment Analysis and Chatbot Web App")
+    st.title("Sentiment Analysis Web App")
 
     # Get input text from the user
     user_input = st.text_area("Enter your review here:")
 
-    chat_input = st.text_area("Chat with the bot here:")
+    # chat_input = st.text_area("Chat with the bot here:")
     
     # Check if the user has entered any text
     if user_input:
@@ -22,12 +22,12 @@ def main():
         # Display the sentiment label
         st.write("Sentiment:", sentiment_label)
 
-        # Prepare messages for chatbot
-        messages = [{"role": "user", "content": chat_input}]
-        chatbot_reply = chatbot_response(messages)
+        # # Prepare messages for chatbot
+        # messages = [{"role": "user", "content": chat_input}]
+        # chatbot_reply = chatbot_response(messages)
 
         # Display the chatbot response in a separate input field
-        st.text_input("Chatbot:", value=chatbot_reply, key="chatbot_input", disabled=True)
+        # st.text_input("Chatbot:", value=chatbot_reply, key="chatbot_input", disabled=True)
 
 if __name__ == '__main__':
     main()
