@@ -3,6 +3,8 @@ import pickle
 from sentiment_analysis import get_sentiment_label  # Import the function from sentiment_analysis.py
 from chatbot import chatbot_response  # Import the chatbot_response function from chatbot.py
 
+openai.api_key = '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'
+
 def main():
     # Set a title for the app
     st.title("Sentiment Analysis and Chatbot Web App")
