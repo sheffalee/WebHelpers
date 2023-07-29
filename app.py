@@ -1,9 +1,14 @@
 import streamlit as st
-import pickle
+# import pickle
 
-# Load the sentiment analysis function from the pickle file
+# # Load the sentiment analysis function from the pickle file
+# with open('sentiment_analysis_model.pkl', 'rb') as file:
+#     get_sentiment_label = pickle.load(file)
+import dill
+
+# Load the sentiment analysis function from the dill file
 with open('sentiment_analysis_model.pkl', 'rb') as file:
-    get_sentiment_label = pickle.load(file)
+    get_sentiment_label = dill.load(file)
 
 def main():
     # Set a title for the app
