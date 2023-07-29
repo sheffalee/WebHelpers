@@ -1,3 +1,5 @@
+pip install -r requirements.txt
+
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
