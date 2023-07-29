@@ -10,8 +10,10 @@ def main():
     st.title("Sentiment Analysis and Chatbot Web App")
 
     # Get input text from the user
-    user_input = st.text_area("Please enter your sentence:")
+    user_input = st.text_area("Enter your review here:")
 
+    chat_input = st.text_area("Chat with the bot here:")
+    
     # Check if the user has entered any text
     if user_input:
         # Perform sentiment analysis and get the sentiment label
