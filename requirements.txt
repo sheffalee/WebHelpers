@@ -1,0 +1,2 @@
+nltk==3.6.3
+streamlit==0.89.0
