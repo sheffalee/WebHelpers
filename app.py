@@ -23,7 +23,7 @@ def main():
         st.write("Sentiment:", sentiment_label)
 
         # Prepare messages for chatbot
-        messages = [{"role": "user", "content": user_input}]
+        messages = [{"role": "user", "content": chat_input}]
         chatbot_reply = chatbot_response(messages)
 
         # Display the chatbot response in a separate input field
