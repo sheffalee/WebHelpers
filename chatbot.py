@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = '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'
+openai.api_key = ''
 
 def chatbot_response(messages):
     user_input = messages[-1]["content"]
