@@ -18,9 +18,18 @@ def generate_response(prompt):
     return message
 
 def main():
-    st.title("ChatBot and Sentiment Analysis")
+    st.title("Web Helpers App")
 
     # Chatbot and Sentiment Analysis section
+    # Sentiment Analysis section
+    st.title("Sentiment Analysis")
+    user_review = st.text_area("Enter your review here")
+
+    if user_review:
+        sentiment_label = get_sentiment_label(user_review)
+        st.write("Sentiment:", sentiment_label)
+
+    #chatbot section
     if 'conversation' not in st.session_state:
         st.session_state.conversation = []
 
@@ -39,13 +48,7 @@ def main():
 
     st.write("------")
 
-    # Sentiment Analysis section
-    st.title("Sentiment Analysis")
-    user_review = st.text_area("Enter your review here")
-
-    if user_review:
-        sentiment_label = get_sentiment_label(user_review)
-        st.write("Sentiment:", sentiment_label)
+    
 
 if __name__ == '__main__':
     main()
