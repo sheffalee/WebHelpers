@@ -3,7 +3,7 @@ import openai
 from sentiment_analysis import get_sentiment_label
 
 # Set up OpenAI API
-openai.api_key = st.secrets[""]
+openai.api_key = st.secrets["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"]
 
 def generate_response(prompt):
     completions = openai.Completion.create(
