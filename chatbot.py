@@ -16,7 +16,7 @@ def generate_response(prompt):
     message = completions.choices[0].text
     return message
 
-st.title("ChatBot")
+# st.title("ChatBot")
 
 #storing the chat 
 
