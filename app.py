@@ -34,7 +34,7 @@ def main():
     if 'conversation' not in st.session_state:
         st.session_state.conversation = []
 
-    user_input = st.text_input("ChatBot: Enter your queries here")
+    user_input = st.text_input("Enter your queries here")
 
     if user_input:
         chatbot_response = generate_response(user_input)
