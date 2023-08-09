@@ -30,6 +30,7 @@ def main():
         st.write("Sentiment:", sentiment_label)
 
     #chatbot section
+    st.title("Chatbot")
     if 'conversation' not in st.session_state:
         st.session_state.conversation = []
 
