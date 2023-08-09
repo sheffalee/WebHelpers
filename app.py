@@ -17,7 +17,8 @@ def main():
         # Display the sentiment label
         st.write("Sentiment:", sentiment_label)
 
-    st.title("Chatbot")
+    # st.title("Chatbot")
+    
 
     
 if __name__ == '__main__':
