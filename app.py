@@ -33,7 +33,7 @@ def generate_response(prompt):
     return message
 
 # Set up the Streamlit app title and styling
-st.title("Welcome to Chat.IO")
+st.title("Welcome to Web Helpers App")
 st.markdown(
     """
     <style>
