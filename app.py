@@ -2,7 +2,7 @@
 import openai
 import streamlit as st
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoConfig
-
+from scipy.special import softmax
 
 headers={
     "authorization":st.secrets["API_KEY"],
