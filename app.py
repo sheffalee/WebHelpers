@@ -138,14 +138,22 @@ if user_input_sentiment:
 
 # Chatbot Section
 st.title("Chatbot")
-# User input for chatbot
-user_input_chatbot = st.text_input("Enter your queries here")
 
-if user_input_chatbot:
-    # Generate chatbot response using OpenAI
-    chatbot_response = generate_response(user_input_chatbot)
-    st.write("Chatbot Response:")
-    st.write(chatbot_response)
+# Function to get user input
+def get_text():
+    input_text = st.text_input("Let's chat here", key="input")
+    return input_text
+
+# Get user input
+user_input = get_text()
+
+# Generate and display responses
+if user_input:
+    chat_entry = {
+        'user': user_input,
+        'chatbot': generate_response(user_input)
+    }
+    st.session_state.chat_history.append(chat_entry)
 
 # Display chat history
 if st.session_state.chat_history:
