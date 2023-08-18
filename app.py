@@ -44,7 +44,7 @@ def predict_sentiment(text):
 st.title("Welcome to Web Helpers App")
 st.markdown(
     """
-    <style>
+       <style>
         /* Add custom CSS styling here */
         body {
             background-color: #1a1a1a;
@@ -72,6 +72,13 @@ st.markdown(
             max-width: 60%;
             margin-top: 5px;
         }
+        .sentiment-result {
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
         .positive-sentiment {
             background-color: #4CAF50;
             color: #ffffff;
@@ -85,6 +92,7 @@ st.markdown(
             color: #ffffff;
         }
     </style>
+
     """,
     unsafe_allow_html=True
 )
