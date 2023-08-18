@@ -1,8 +1,6 @@
-streamlit 
-numpy 
+openai
+streamlit
+numpy
 scipy
 transformers
-openai
-pytorch
 torch
-tokenizers safetensors pytz pytorch zipp watchdog validators urllib3 tzdata typing-extensions tqdm tornado toolz toml tenacity smmap six rpds-py regex pyyaml pympler pygments protobuf pillow packaging numpy multidict mdurl MarkupSafe idna fsspec frozenlist filelock click charset-normalizer certifi cachetools blinker attrs async-timeout yarl scipy requests referencing pytz-deprecation-shim python-dateutil pyarrow markdown-it-py jinja2 importlib-metadata gitdb aiosignal tzlocal rich pydeck pandas jsonschema-specifications huggingface-hub gitpython aiohttp transformers openai jsonschema altair streamlit
