@@ -38,7 +38,31 @@ def predict_sentiment(text):
     ranking = np.argsort(scores)
     highest_sentiment = config.id2label[ranking[-1]]
     return highest_sentiment
-    
+
+# Sentiment Analysis Section
+st.title("Sentiment Analysis")
+# User input for sentiment analysis
+user_input_sentiment = st.text_input("Enter your reviews here")
+
+if user_input_sentiment:
+    # Perform sentiment analysis
+    highest_sentiment = predict_sentiment(user_input_sentiment)
+
+    # Apply styling based on sentiment
+    sentiment_color_map = {
+        "positive": "positive-sentiment",
+        "negative": "negative-sentiment",
+        "neutral": "neutral-sentiment"
+    }
+    sentiment_styling = sentiment_color_map.get(highest_sentiment, "neutral-sentiment")
+    sentiment_text = f"{highest_sentiment.capitalize()} Sentiment"
+    st.markdown(
+        f'<div class="sentiment-result {sentiment_styling}">{sentiment_text}</div>',
+        unsafe_allow_html=True
+    )
+
+
+
 # Initialize session state
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
