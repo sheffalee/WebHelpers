@@ -117,6 +117,18 @@ st.markdown(
             max-width: 60%;
             margin-top: 5px;
         }
+        .positive-sentiment {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+        .negative-sentiment {
+            background-color: #FF5733;
+            color: #ffffff;
+        }
+        .neutral-sentiment {
+            background-color: #008CBA;
+            color: #ffffff;
+        }
     </style>
     """,
     unsafe_allow_html=True
