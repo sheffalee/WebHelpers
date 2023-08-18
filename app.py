@@ -1,9 +1,6 @@
 # Import the required libraries
 import openai
 import streamlit as st
-import numpy as np
-from scipy.special import softmax
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoConfig
 
 headers={
     "authorization":st.secrets["API_KEY"],
@@ -12,6 +9,7 @@ headers={
 
 #Set the openai api key
 openai.api_key = st.secrets["API_KEY"]
+
 # Initialize session state
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
@@ -33,7 +31,7 @@ def generate_response(prompt):
     return message
 
 # Set up the Streamlit app title and styling
-st.title("Welcome to Web Helpers App")
+st.title("Welcome to Chat.IO")
 st.markdown(
     """
     <style>
@@ -64,80 +62,10 @@ st.markdown(
             max-width: 60%;
             margin-top: 5px;
         }
-        .sentiment-result {
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .positive-sentiment {
-            background-color: #4CAF50;
-            color: #ffffff;
-        }
-        .negative-sentiment {
-            background-color: #FF5733;
-            color: #ffffff;
-        }
-        .neutral-sentiment {
-            background-color: #008CBA;
-            color: #ffffff;
-        }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-# Define sentiment analysis model and tokenizer
-MODEL = "cardiffnlp/twitter-roberta-base-sentiment-latest"
-tokenizer = AutoTokenizer.from_pretrained(MODEL)
-config = AutoConfig.from_pretrained(MODEL)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL)
-
-# Define a function to preprocess text
-def preprocess(text):
-    new_text = []
-    for t in text.split(" "):
-        t = '@user' if t.startswith('@') and len(t) > 1 else t
-        t = 'http' if t.startswith('http') else t
-        new_text.append(t)
-    return " ".join(new_text)
-
-# Define a function to predict sentiment
-def predict_sentiment(text):
-    text = preprocess(text)
-    encoded_input = tokenizer(text, return_tensors='pt')
-    output = model(**encoded_input)
-    scores = output[0][0].detach().numpy()
-    scores = softmax(scores)
-    ranking = np.argsort(scores)
-    highest_sentiment = config.id2label[ranking[-1]]
-    return highest_sentiment
-
-# Sentiment Analysis Section
-st.title("Sentiment Analysis")
-# User input for sentiment analysis
-user_input_sentiment = st.text_input("Enter your reviews here")
-
-if user_input_sentiment:
-    # Perform sentiment analysis
-    highest_sentiment = predict_sentiment(user_input_sentiment)
-
-    # Apply styling based on sentiment
-    sentiment_color_map = {
-        "positive": "positive-sentiment",
-        "negative": "negative-sentiment",
-        "neutral": "neutral-sentiment"
-    }
-    sentiment_styling = sentiment_color_map.get(highest_sentiment, "neutral-sentiment")
-    sentiment_text = f"{highest_sentiment.capitalize()} Sentiment"
-    st.markdown(
-        f'<div class="sentiment-result {sentiment_styling}">{sentiment_text}</div>',
-        unsafe_allow_html=True
-    )
-
-# Chatbot Section
-st.title("Chatbot")
 
 # Function to get user input
 def get_text():
