@@ -2,6 +2,10 @@ WEB HELPERS
 
 Welcome to the E-commerce Product Support Web Extension, developed by the Web Helpers team. Our mission is to empower users with valuable insights and enhance their online shopping experience. By leveraging the capabilities of Natural Language Processing (NLP), we bring you a set of powerful tools designed to provide a deeper understanding of product webpages on e-commerce platforms, starting with Amazon.
 
+Overview :
+
+This project automates sentiment analysis and text summarizing for Amazon product page analysis using NLP. Sentiment analysis provides detailed review insights that go beyond the scope of traditional star ratings. Users benefit from text summarizing by having quick access to product characteristics. Additionally, a gpt-3.5 chatbot quickly answers questions about the products. This improves user engagement and information processing, changing the efficacy and efficiency of the Amazon buying experience.
+
 Key Features:
 
 Text Summarization:
